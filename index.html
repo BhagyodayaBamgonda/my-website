@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVADHOOT Residency & Bhakt Nivas</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Glittering Background for Body */
+        body {
+            background: linear-gradient(135deg, #cfcfcf, #a9a9a9, #808080);
+            background-size: 400% 400%;
+            animation: glitter 10s ease infinite;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Glittering Background Animation */
+        @keyframes glitter {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header with Background Image */
+        .header {
+            position: relative;
+            height: 60vh;
+            background: url('view.jpeg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .header p {
+            font-size: 1.5em;
+            color: #FFDEAD;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Container */
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        /* About Us Section */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .about-img {
+            flex: 1 1 45%;
+            min-width: 300px;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-img img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-text {
+            flex: 1 1 45%;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            color: #800000;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        .services .section {
+            text-align: center;
+            width: 100%;
+        }
+
+        .services h2 {
+            font-size: 2.5em;
+            color: #800000;
+            margin-bottom: 10px;
+        }
+
+        /* Exterior View Section */
+        .exterior-view {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .exterior-view img {
+            width: 60%;
+            max-width: 400px;
+            height: 500px; ;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .exterior-view img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Room View Section */
+        .room-view {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .room-view h2 {
+            font-size: 2.5em;
+            color: #800000;
+            margin-bottom: 20px;
+        }
+
+        .room-view-images {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .room-view-images img {
+            width: 30%;
+            max-width: 400px;
+            height: 400px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .room-view-images img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Canteen Section */
+        .canteen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .canteen h2 {
+            font-size: 2.5em;
+            color: #D2691E;
+            margin-bottom: 20px;
+        }
+
+        .canteen-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .canteen-images img {
+            width: 45%;
+            max-width: 400px;
+            height: 400px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .canteen-images img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Instructions Section */
+        .instructions {
+            text-align: center;
+            padding: 40px 20px;
+            margin: 40px 0;
+        }
+
+        .instructions h2 {
+            font-size: 2.5em;
+            color: #A52A2A;
+            margin-bottom: 20px;
+        }
+
+        .instructions img {
+            width: 70%;
+            max-width: 400px;
+            height: 400px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Video Section */
+        .video-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .video-section h2 {
+            font-size: 2.5em;
+            color: #4B0082;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .video-container video {
+            width: 45%;
+            max-width: 400px;
+            height: 400px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Info Video Section */
+        .info-video-section {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .info-video-section h2 {
+            font-size: 2.5em;
+            color: #6A5ACD;
+            margin-bottom: 20px;
+        }
+
+        .info-video-section video {
+            width: 70%;
+            max-width: 400px;
+            height: 400px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 40px 20px;
+            background: #f4f4f4;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            color: #8B4513;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1>AVADHOOT Residency & Bhakt Nivas</h1>
+            <p>Your Spiritual Home Away From Home</p>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="container">
+        <div class="about">
+            <div class="about-img">
+                <img src="poster.jpeg" alt="About Us">
+            </div>
+            <div class="about-text">
+                <h2>About AVADHOOT Residency & Bhakt Nivas</h2>
+                <h3>At AVADHOOT Residency, we offer a serene and peaceful environment for devotees. Whether you are here for spiritual rejuvenation or a long stay, we provide all the facilities you need for a comfortable and meaningful experience.</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exterior View Section -->
+    <div class="exterior-view">
+        <h2>Exterior View</h2>
+        <img src="exterior.jpeg" alt="Exterior View">
+        <h4>The exterior view of AVADHOOT Residency showcases a modern, spacious facility surrounded by lush greenery. The residency offers ample parking space for guests and includes convenient amenities such as well-lit pathways, easy access to nearby temples, and a welcoming entrance designed for comfort and ease of movement.
+
+
+
+
+
+
+        </h4>
+    </div>
+
+    <!-- Room View Section -->
+    <div class="room-view">
+        <h2>Room View</h2>
+        <div class="room-view-images">
+            <img src="room1.jpeg" alt="Room View 1">
+            <img src="room2.jpeg" alt="Room View 2">
+            <img src="room3.jpeg" alt="Room View 3">
+            <h4>The room view at AVADHOOT Residency highlights spacious, clean, and well-furnished accommodations, available in both AC and non-AC options to suit different preferences. Each room features comfortable beds, attached bathrooms, and essential amenities for a relaxing stay. Guests can enjoy modern facilities like 24/7 room service, hot water supply, and serene views for a peaceful experience.
+
+
+
+
+
+
+            </h4>
+        </div>
+    </div>
+
+    <!-- Canteen Section -->
+    <div class="canteen">
+        <h2>Our Canteen</h2>
+        <div class="canteen-images">
+            <img src="kitchen.png" alt="Canteen Image 1">
+            <img src="menu.png" alt="Canteen Image 2">
+            <h4>The canteen at AVADHOOT Residency offers a clean, welcoming space with a variety of meal options to cater to all tastes and dietary needs. Guests can enjoy fresh, hygienic food prepared daily, with both vegetarian and local specialties available. The canteen also features comfortable seating and a menu designed to ensure a nourishing dining experience during your stay.</h4>
+        </div>
+    </div>
+
+    <!-- Instructions Section -->
+    <div class="instructions">
+        <h2>Important Instructions</h2>
+        <img src="instructions.jpeg" alt="Instructions">
+        <h4>Please carefully follow the posted instructions to ensure a safe and pleasant experience at AVADHOOT Residency. These guidelines are designed to help maintain a respectful, clean, and peaceful environment for all guests.</h4>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-section">
+        <h2>Video Tours</h2>
+        <div class="video-container">
+            <video controls>
+                <source src="video1 (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h4>Take a virtual tour of our cozy and well-furnished rooms, designed for comfort and convenience. Each room is thoughtfully equipped with amenities, offering both AC and non-AC options to suit every preference. Enjoy a clean, serene environment with modern touches to enhance your stay.
+
+
+
+
+
+
+
+
+
+            </h4>
+        </div>
+    </div>
+
+    <!-- Info Video Section -->
+    <div class="info-video-section">
+        <h2>More Information</h2>
+        <video controls>
+            <source src="info.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h4>Avadhoot Residency provides a peaceful and comfortable retreat just minutes from the Swami Mandir, ideal for pilgrims and visitors. With modern rooms, dedicated services, and serene surroundings, it offers an enriching and restful stay.</h4>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: 9418589888, 9418689888</p>
+        <p>Address: Plot No. 28, Gat No. 691/3/B, Bhosele Mangal Karyalay Samor, Mendhi-Ganagapur Road, Akkalkot.</p>
+        <p>Email: info@avadhootresidency.com</p>
+    </div>
+
+</body>
+</html>
